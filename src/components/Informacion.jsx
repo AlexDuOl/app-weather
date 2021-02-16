@@ -31,10 +31,11 @@ const Informacion = (props) => {
                 <div className="centered ten wide column">
                     <div className="row title-row">
                         <p className="ui header"><span>Tiempo en {props.name}</span></p>
+                        <p className="item temp-item">{temp}°</p>
                     </div>
-                    <div className="row title-row">
+                    {/* <div className="row title-row">
                         <p className="item">Temperatura: {temp}</p>
-                    </div>
+                    </div> */}
                     <div className="ui celled list">
                         <p className="item">Sensación termica: {feels_like}</p>
                         <p className="item"><span><i class="fas fa-thermometer-empty"></i></span> Temperatura mínima: {temp_min}</p>

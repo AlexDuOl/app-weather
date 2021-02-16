@@ -10,11 +10,12 @@ const Cabecera = (props) => {
   const temp = toFixNumber(props.temp)
 
   return (
-  <div className="ui stackable two column grid header-contenedor">
-    <div className="center aligned row">
-      <div className="centered column">
-        {/* <h2 className="ui header"><span>Información del servicio</span></h2> */}
-      </div>
+  <div className="ui stackable one column grid header-contenedor">
+    {/* Quitar el two  y colum en el div con row que esta debajo*/}
+    <div className="two center aligned column row">
+      {/* <div className="centered column">
+        <h2 className="ui header"><span>Información del servicio</span></h2>
+      </div> */}
       <div className="centered column">
         <p className="ui header">
         <span><i className="sun centered aligned large icon"></i></span>

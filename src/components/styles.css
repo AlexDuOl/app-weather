@@ -89,6 +89,11 @@ p span {
     margin-bottom: 30px!important;
 }
 
+.informacion-contenedor p.temp-item {
+    font-size: 60px!important;
+    text-align: center!important;
+}
+
 /* Slideshow */
 
 .slide-container {
@@ -125,3 +130,8 @@ p span {
     align-items: center;
 }
 
+/* @media (max-width: 600px) {
+    .header-contenedor {
+        height: 80px;
+    }
+} */
