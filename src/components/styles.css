@@ -1,0 +1,111 @@
+.contenedor-general {
+    background: #efeff0;
+    width: 100%;
+    padding-bottom: 40px;
+    min-height: calc(100% - 40px);
+    position: relative;
+}
+
+p span {
+    color: #ffff;
+    font-size: 40px;
+}
+
+.list p {
+    font-size: 25px;
+}
+
+/* Logo */
+
+.logo-contenedor {
+    background: #ffff;
+    width: 100%;
+    height: auto;
+    padding: 12px 0;
+    display: flex;
+    justify-content: center;
+}
+
+/* Header */
+
+.header-contenedor {
+    background-color: #ff8d41;
+    height: auto;
+    padding: 1rem 0;
+}
+
+.header-contenedor h2 span ,
+.header-contenedor h3 span,
+.footer-contenedor p {
+    color: #ffff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
+.header-contenedor i,
+.informacion-contenedor i {
+    color: rgb(255, 255, 0);
+    font-size: 1.5em;
+}
+
+/* Información */
+
+.informacion-contenedor {
+    background-color: #efeff0;
+    width: 100%;
+    min-height: 70vh;
+    padding: 15px!important;
+}
+
+.informacion-contenedor .title-row {
+    padding: 10px;
+}
+
+.row-color {
+    background-color: #ffff;
+    /* background-color: rgba(165, 163, 163, 0.2); */
+    color: #ffff;
+    box-shadow: 2px 2px 5px #999;
+    border-radius: 10px;
+    margin-bottom: 30px!important;
+}
+
+.bg-clear {
+    background-image: url('../images/clearSky.jpg');
+}
+
+/* Slideshow */
+
+.slide-container {
+    background-color: #ffff;
+}
+
+.each-slide > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    height: 50px;
+  }
+  
+  .each-slide span {
+    padding: 20px;
+    font-size: 20px;
+    background: #efefef;
+    text-align: center;
+  }
+
+  /* Footer */
+
+.footer-contenedor {
+    background-color: #ff8d41;
+    width: 100%;
+    height: 40px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import {WEATHER_KEY} from '../keys'
 
 import Contenedor from '../components/Contenedor'
-import Cabecera from '../components/Cabecera'
 
 class ClimaContainer extends Component {
     constructor(props){
@@ -25,8 +25,8 @@ class ClimaContainer extends Component {
         }
     }
 
-    /* componentDidMount() {
-        axios.get(`http://api.openweathermap.org/data/2.5/weather?zip=45079,mx&appid=73fcf40c7606e44994e8611c28c67651`)
+    componentDidMount() {
+        axios.get(`http://api.openweathermap.org/data/2.5/weather?zip=34000,mx&appid=${WEATHER_KEY}`)
         .then(res => {
             const respuesta = res.data
             console.log(respuesta) 
@@ -45,16 +45,33 @@ class ClimaContainer extends Component {
                 sunset: respuesta.sys.sunset,
                 speed: respuesta.wind.speed,
                 deg: respuesta.wind.deg,
+                country: respuesta.sys.country,
             }) 
             
         })
         .catch(console.log)
-    } */
+    }
 
     render() {
-        console.log(this.state) 
         return (
-            <Cabecera nombre={this.state.name} />
+            <Contenedor 
+                name={this.state.name}
+                country={this.state.country}
+                description={this.state.description}
+                main={this.state.main}
+                icon={this.state.icon}
+                feels_like={this.state.feels_like}
+                humidity={this.state.humidity}
+                pressure={this.state.pressure}
+                temp={this.state.temp}
+                temp_max={this.state.temp_max}
+                temp_min={this.state.temp_min}
+                sunrise={this.state.sunrise}
+                sunset={this.state.sunset}
+                speed={this.state.speed}
+                deg={this.state.deg}
+                zipCode={this.zipCode}
+            />
         )
     }
 }
