@@ -3,7 +3,7 @@ import './styles.css'
 
 const Footer = () => (
     <div className="footer-contenedor">
-        <p className="ui footer">&copy; Suma te lleva 2021</p>
+        <p className="ui footer">&copy; Clima 2021</p>
     </div>
 ) 
 

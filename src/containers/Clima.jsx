@@ -26,7 +26,7 @@ class ClimaContainer extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://api.openweathermap.org/data/2.5/weather?zip=34000,mx&appid=${WEATHER_KEY}`)
+        axios.get(`http://api.openweathermap.org/data/2.5/weather?zip=45100,mx&appid=${WEATHER_KEY}`)
         .then(res => {
             const respuesta = res.data
             console.log(respuesta) 

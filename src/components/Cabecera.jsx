@@ -10,17 +10,17 @@ const Cabecera = (props) => {
   const temp = toFixNumber(props.temp)
 
   return (
-  <div className="ui stackable two column grid container header-contenedor">
+  <div className="ui stackable two column grid header-contenedor">
     <div className="center aligned row">
       <div className="centered column">
-        <h2 className="ui header"><span>Información del servicio</span></h2>
+        {/* <h2 className="ui header"><span>Información del servicio</span></h2> */}
       </div>
       <div className="centered column">
-        <h3 className="ui header">
-        <span><i className="sun centered aligned icon"></i></span>
+        <p className="ui header">
+        <span><i className="sun centered aligned large icon"></i></span>
         <span>{temp}° </span>
           <span>{props.name}, {props.country}</span>
-        </h3>
+        </p>
       </div>
     </div>
   </div>
