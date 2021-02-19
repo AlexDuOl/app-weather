@@ -1,78 +1,48 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import {WEATHER_KEY} from '../keys'
+import { WEATHER_KEY } from '../keys'
 
 import Contenedor from '../components/Contenedor'
+import DatosClimaticos from '../models/DatosClimaticos'
 
 class ClimaContainer extends Component {
     constructor(props){
         super(props);
         this.state = {
-            name: "",
-            description: "",
-            main: "",
-            icon: "",
-            feels_like: 0,
-            humidity: 0,
-            pressure: 0,
-            temp: 0,
-            temp_max: 0,
-            temp_min: 0,
-            sunrise: 0,
-            sunset: 0,
-            speed: 0,
-            deg: 0,
+            clima: null,
         }
     }
 
     componentDidMount() {
-        axios.get(`http://api.openweathermap.org/data/2.5/weather?zip=45100,mx&appid=${WEATHER_KEY}`)
-        .then(res => {
-            const respuesta = res.data
-            console.log(respuesta) 
+        axios.get(`http://api.openweathermap.org/data/2.5/weather?zip=45079,mx&appid=${WEATHER_KEY}&lang=es&units=metric`)
+        /* axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=20.63467132675319&lon=-103.43266311904904&appid=${WEATHER_KEY}`) */
+        .then(respuesta => {
             this.setState({
-                name: respuesta.name,
-                description: respuesta.weather[0].description,
-                main: respuesta.weather[0].main,
-                icon: respuesta.weather[0].icon,
-                feels_like: respuesta.main.feels_like,
-                humidity: respuesta.main.humidity,
-                pressure: respuesta.main.pressure,
-                temp: respuesta.main.temp,
-                temp_max: respuesta.main.temp_max,
-                temp_min: respuesta.main.temp_min,
-                sunrise: respuesta.sys.sunrise,
-                sunset: respuesta.sys.sunset,
-                speed: respuesta.wind.speed,
-                deg: respuesta.wind.deg,
-                country: respuesta.sys.country,
+                clima: new DatosClimaticos(respuesta.data)
             }) 
-            
         })
         .catch(console.log)
     }
 
     render() {
-        return (
-            <Contenedor 
-                name={this.state.name}
-                country={this.state.country}
-                description={this.state.description}
-                main={this.state.main}
-                icon={this.state.icon}
-                feels_like={this.state.feels_like}
-                humidity={this.state.humidity}
-                pressure={this.state.pressure}
-                temp={this.state.temp}
-                temp_max={this.state.temp_max}
-                temp_min={this.state.temp_min}
-                sunrise={this.state.sunrise}
-                sunset={this.state.sunset}
-                speed={this.state.speed}
-                deg={this.state.deg}
-                zipCode={this.zipCode}
-            />
-        )
+        /** @type {DatosClimaticos} */
+        const clima = this.state.clima
+
+        if(!clima){
+            return (
+                <div>Sin Información de clima</div>
+            )
+        }else{
+            return (
+                <Contenedor
+                    name = {clima.getName()}
+                    main = {clima.getMain()}
+                    sys = {clima.getSys()}
+                    wind = {clima.getWind()}
+                    weather = {clima.getWeather()}
+                />
+            )
+        }
     }
 }
 
